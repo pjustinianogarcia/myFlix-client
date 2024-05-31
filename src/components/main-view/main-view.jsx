@@ -3,7 +3,7 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([
+  const [movies] = useState([
     {
       id: 1,
       title: "Clueless",
@@ -60,7 +60,7 @@ export const MainView = () => {
         <MovieCard
           key={movie.id}
           movie={movie}
-          onClick={() => {
+          onMovieClick={() => {
             setSelectedMovie(movie);
           }}
         />
