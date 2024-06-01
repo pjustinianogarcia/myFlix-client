@@ -1,47 +1,21 @@
+import { useState, useEffect } from "react";
 import { useState } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-  const [movies] = useState([
-    {
-      id: 1,
-      title: "Clueless",
-      image:
-        "clueless.jpg",
-      director: "Amy Heckerling"
-    },
-    {
-      id: 2,
-      title: "Mean Girls",
-      image:
-        "meangirls.png",
-      director: "Tina Fey"
-    },
-    {
-      id: 3,
-      title: "What a Girl Wants",
-      image:
-        "whatagirlwants.jpg",
-      director: "Dennie Gordon"
-    },
-    {
-      id: 4,
-      title: "The 10 Things I Hate About You",
-      image:
-        "10thingsihateaboutyou.jpg",
-      director: "Gil Junger"
-    },
-    {
-      id: 5,
-      title: "Heathers",
-      image:
-        "heathers.jpg",
-      director: "Michael Stephen"
-    }
-  ]);
+  const [movies] = useState([]);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
+
+  useEffect(() => {
+    fetch("https://git.heroku.com/myflixachv.git")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("movies from api:", data);
+        setMovies(data);
+      });
+  }, []);
 
   if (selectedMovie) {
     return (
