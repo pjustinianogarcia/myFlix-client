@@ -15,23 +15,38 @@ export const LoginView = ({ onLoggedIn }) => {
     const url = `https://myflixachv-8f7ac3ab3517.herokuapp.com/login?${query}`;
 
     fetch(url, {
-      method: "POST"
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        Username: username,
+        Password: password
+      })
     })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((data) => {
-        console.log("Login response: ", data);
-        if (data.user) {
-            localStorage.setItem("user", JSON.stringify(data.user));
-            localStorage.setItem("token", data.token);
-            onLoggedIn(data.user, data.token);
-        } else {
-            alert("No such user");
-          }
-        })
-        .catch((e) => {
-          alert("Something went wrong");
-        });
-    };
+      console.log("Login response: ", data);
+      if (data.user) {
+        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("token", data.token);
+        onLoggedIn(data.user, data.token);
+      } else {
+        alert("No such user");
+      }
+    })
+    .catch((e) => {
+      alert("Something went wrong");
+      console.error("Login error:", e);
+    });
+  };
+
 
   return (
     <form onSubmit={handleSubmit}>
