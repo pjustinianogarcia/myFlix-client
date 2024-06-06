@@ -11,6 +11,7 @@ export const LoginView = ({ onLoggedIn }) => {
       Username: username,
       Password: password
     }).toString();
+    console.log("query", query);
 
     const url = `https://myflixachv-8f7ac3ab3517.herokuapp.com/login?${query}`;
 
@@ -44,6 +45,7 @@ export const LoginView = ({ onLoggedIn }) => {
     .catch((e) => {
       alert("Something went wrong");
       console.error("Login error:", e);
+      console.log("Login error:", e);
     });
   };
 
