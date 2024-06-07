@@ -27399,7 +27399,7 @@ const MainView = ()=>{
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>response.json()).then((data)=>{
-            console.log(data);
+            setMovies(data);
         });
     }, [
         token
@@ -27410,6 +27410,8 @@ const MainView = ()=>{
                 onLoggedIn: (user, token)=>{
                     setUser(user);
                     setToken(token);
+                    localStorage.setItem("user", JSON.stringify(user));
+                    localStorage.setItem("token", token);
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
@@ -27419,7 +27421,7 @@ const MainView = ()=>{
             "or",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 37,
+                lineNumber: 39,
                 columnNumber: 7
             }, undefined)
         ]
@@ -27429,14 +27431,14 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 44,
+        lineNumber: 46,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 49,
+        lineNumber: 51,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27448,7 +27450,7 @@ const MainView = ()=>{
                     }
                 }, movie.id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 56,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, undefined)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27460,13 +27462,13 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 64,
+                lineNumber: 66,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 54,
+        lineNumber: 56,
         columnNumber: 5
     }, undefined);
 };

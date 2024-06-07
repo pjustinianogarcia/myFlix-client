@@ -23,7 +23,7 @@ export const MainView = () => {
     .then((data) => {
       setMovies(data);
     });
-  }, 
+  }, [token]);
 
   
   if (!user) {
@@ -32,6 +32,8 @@ export const MainView = () => {
       <LoginView onLoggedIn={(user, token) => {
         setUser(user);
         setToken(token);
+        localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("token", token);
       }} />
       or
       <SignupView />
