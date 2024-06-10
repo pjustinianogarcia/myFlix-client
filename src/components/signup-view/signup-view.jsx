@@ -16,7 +16,7 @@ export const SignupView = () => {
       Birthday: birthday
     };
 
-    fetch("https://myflixachv-8f7ac3ab3517.herokuapp.com/movies", {
+    fetch("https://myflixachv-8f7ac3ab3517.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -29,6 +29,9 @@ export const SignupView = () => {
       } else {
         alert("Signup failed");
       }
+    }).catch((error) => {
+      console.error("Error during signup:", error);
+      alert("An error occurred. Please try again.");
     });
   };
   
