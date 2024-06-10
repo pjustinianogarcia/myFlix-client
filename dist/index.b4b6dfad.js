@@ -27448,7 +27448,7 @@ const MainView = ()=>{
                     onMovieClick: ()=>{
                         setSelectedMovie(movie);
                     }
-                }, movie.id, false, {
+                }, movie._id, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 58,
                     columnNumber: 9
@@ -27493,6 +27493,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _process = require("process");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 const MovieCard = ({ movie, onMovieClick })=>{
@@ -27501,30 +27502,41 @@ const MovieCard = ({ movie, onMovieClick })=>{
             onMovieClick(movie);
         },
         children: [
-            movie.title,
+            movie.Title,
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: movie.description
+                children: movie.Description
             }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 11,
-                columnNumber: 9
+                lineNumber: 12,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 7
     }, undefined);
 };
 _c = MovieCard;
 MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
-        id: (0, _propTypesDefault.default).number.isRequired,
-        title: (0, _propTypesDefault.default).string,
-        description: (0, _propTypesDefault.default).string.isRequired,
-        director: (0, _propTypesDefault.default).string.isRequired,
-        genre: (0, _propTypesDefault.default).string.isRequired,
-        image: (0, _propTypesDefault.default).string
+        _id: (0, _propTypesDefault.default).string.isRequired,
+        Title: (0, _propTypesDefault.default).string,
+        Description: (0, _propTypesDefault.default).string.isRequired,
+        Director: (0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).string,
+            (0, _propTypesDefault.default).shape({
+                Name: (0, _propTypesDefault.default).string.isRequired
+            })
+        ]).isRequired,
+        Genre: (0, _propTypesDefault.default).oneOfType([
+            (0, _propTypesDefault.default).string,
+            (0, _propTypesDefault.default).shape({
+                Name: (0, _propTypesDefault.default).string.isRequired
+            })
+        ]).isRequired,
+        ImagePath: (0, _propTypesDefault.default).string,
+        Feature: (0, _propTypesDefault.default).bool
     }).isRequired,
     onMovieClick: (0, _propTypesDefault.default).func.isRequired
 };
@@ -27536,7 +27548,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"20RuS","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"wfrgK"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","process":"d5jf4","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"20RuS","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"wfrgK"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28329,7 +28341,7 @@ const MovieView = ({ movie, onBackClick })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.imagePath
+                    src: movie.ImagePath
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 5,
@@ -28350,7 +28362,7 @@ const MovieView = ({ movie, onBackClick })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.title
+                        children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 9,
@@ -28372,7 +28384,7 @@ const MovieView = ({ movie, onBackClick })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.description
+                        children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 13,
@@ -28391,10 +28403,10 @@ const MovieView = ({ movie, onBackClick })=>{
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 16,
-                        columnNumber: 9
+                        columnNumber: 3
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.director.Name
+                        children: typeof movie.Director === "object" ? movie.Director.Name : movie.Director
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 17,
@@ -28416,7 +28428,7 @@ const MovieView = ({ movie, onBackClick })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.genre.name
+                        children: typeof movie.Genre === "object" ? movie.Genre.Name : movie.Genre
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 21,
