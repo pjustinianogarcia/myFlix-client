@@ -31,7 +31,7 @@ export const MainView = () => {
   
   if (!user) {
     return (
-      <Row style={{border: "1px solid blue"}}>
+      <Row>
       <>
       <Col md={5}>
       <LoginView onLoggedIn={(user, token) => {
@@ -51,7 +51,7 @@ export const MainView = () => {
   if (selectedMovie) {
     return (
       <Row className="justify-content-md-center">
-      <Col md={8} style={{border: "1px solid blue"}}>
+      <Col md={8}>
       <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
       </Col>
       </Row>
