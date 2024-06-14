@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/Button";
+import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 export const MovieView = ({ movie }) => {
