@@ -3,6 +3,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { ProfileView } from '../profile-view/profileview';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
@@ -37,6 +38,11 @@ export const MainView = () => {
     localStorage.setItem("token", token);
   };
 
+  const onUserUpdate = (updatedUser) => {
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
+
   return (
     <BrowserRouter>
       <Row className="justify-content-md-center">
@@ -62,6 +68,18 @@ export const MainView = () => {
                 <Col md={5}>
                   <LoginView onLoggedIn={onLoggedIn} />
                 </Col>
+              )
+            }
+          />
+           <Route
+            path="/profile"
+            element={
+              user ? (
+                <Col md={8}>
+                  <ProfileView user={user} token={token} onUserUpdate={onUserUpdate} />
+                </Col>
+              ) : (
+                <Navigate to="/login" replace />
               )
             }
           />
