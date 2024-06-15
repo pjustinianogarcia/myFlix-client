@@ -11,7 +11,7 @@ export const MovieCard = ({ movie}) => {
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+          <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
           <Button variant="secondary">More</Button>
         </Link>
       </Card.Body>

@@ -71,7 +71,7 @@ export const SignupView = () => {
         />
         </Form.Group>
 
-        <Form.Group controlId="email">
+        <Form.Group controlId="formBirthday">
       <Form.Label>Birthday:</Form.Label>
         <Form.Control
           type="date"
