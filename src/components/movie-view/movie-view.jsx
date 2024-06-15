@@ -22,12 +22,12 @@ export const MovieView = ({ movies }) => {
         <span>{movie.Description}</span>
       </div>
       <div>
-  <span>Director: </span>
-        <span>{typeof movie.Director === 'object' ? movie.Director.Name : movie.Director}</span>
+      <span>Director: </span>
+        <span>{movie.Director.Name}</span>
       </div>
       <div>
         <span>Genre: </span>
-        <span>{typeof movie.Genre === 'object' ? movie.Genre.Name : movie.Genre}</span>
+        <span>{movie.Genre.Name}</span>
       </div>
       <Link to={`/`}>
         <button className="back-button">Back</button>

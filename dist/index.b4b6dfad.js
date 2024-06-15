@@ -27293,23 +27293,23 @@ const MainView = ()=>{
                             to: "/"
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 56,
+                            lineNumber: 57,
                             columnNumber: 17
                         }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                             md: 5,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 59,
+                                lineNumber: 60,
                                 columnNumber: 19
                             }, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 58,
+                            lineNumber: 59,
                             columnNumber: 17
                         }, void 0)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27318,7 +27318,7 @@ const MainView = ()=>{
                             to: "/"
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 68,
+                            lineNumber: 69,
                             columnNumber: 17
                         }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                             md: 5,
@@ -27326,17 +27326,17 @@ const MainView = ()=>{
                                 onLoggedIn: onLoggedIn
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 71,
+                                lineNumber: 72,
                                 columnNumber: 19
                             }, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 70,
+                            lineNumber: 71,
                             columnNumber: 17
                         }, void 0)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27349,24 +27349,24 @@ const MainView = ()=>{
                                 onUserUpdate: onUserUpdate
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 19
                             }, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 80,
+                            lineNumber: 81,
                             columnNumber: 17
                         }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                             to: "/login",
                             replace: true
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 84,
+                            lineNumber: 85,
                             columnNumber: 17
                         }, void 0)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 12
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27377,24 +27377,24 @@ const MainView = ()=>{
                                 movies: movies
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 19
                             }, void 0)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 92,
+                            lineNumber: 93,
                             columnNumber: 17
                         }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                             to: "/login",
                             replace: true
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 96,
+                            lineNumber: 97,
                             columnNumber: 17
                         }, void 0)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88,
+                        lineNumber: 89,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27403,7 +27403,7 @@ const MainView = ()=>{
                             children: "The list is empty!"
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 105,
+                            lineNumber: 106,
                             columnNumber: 19
                         }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                             children: [
@@ -27414,12 +27414,12 @@ const MainView = ()=>{
                                             movie: movie
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 110,
+                                            lineNumber: 111,
                                             columnNumber: 25
                                         }, void 0)
                                     }, movie._id, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 109,
+                                        lineNumber: 110,
                                         columnNumber: 23
                                     }, void 0)),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -27432,7 +27432,7 @@ const MainView = ()=>{
                                     children: "Logout"
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 114,
                                     columnNumber: 21
                                 }, void 0)
                             ]
@@ -27441,28 +27441,28 @@ const MainView = ()=>{
                             replace: true
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 117,
+                            lineNumber: 118,
                             columnNumber: 17
                         }, void 0)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 51,
+                lineNumber: 52,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 50,
+            lineNumber: 51,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 49,
+        lineNumber: 50,
         columnNumber: 5
     }, undefined);
 };
@@ -37607,10 +37607,10 @@ const MovieView = ({ movies })=>{
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 25,
-                        columnNumber: 3
+                        columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: typeof movie.Director === "object" ? movie.Director.Name : movie.Director
+                        children: movie.Director.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 26,
@@ -37632,7 +37632,7 @@ const MovieView = ({ movies })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: typeof movie.Genre === "object" ? movie.Genre.Name : movie.Genre
+                        children: movie.Genre.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 30,
