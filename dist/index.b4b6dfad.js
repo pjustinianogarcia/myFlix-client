@@ -37544,7 +37544,7 @@ const MovieView = ({ movies })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movies.ImagePath
+                    src: movie.ImagePath
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 14,
@@ -37565,7 +37565,7 @@ const MovieView = ({ movies })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movies.Title
+                        children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 18,
@@ -37587,7 +37587,7 @@ const MovieView = ({ movies })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movies.Description
+                        children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 22,
@@ -37609,7 +37609,7 @@ const MovieView = ({ movies })=>{
                         columnNumber: 3
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: typeof movies.Director === "object" ? movies.Director.Name : movies.Director
+                        children: typeof movie.Director === "object" ? movie.Director.Name : movie.Director
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 26,
@@ -37631,7 +37631,7 @@ const MovieView = ({ movies })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: typeof movies.Genre === "object" ? movies.Genre.Name : movies.Genre
+                        children: typeof movie.Genre === "object" ? movie.Genre.Name : movie.Genre
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 30,
