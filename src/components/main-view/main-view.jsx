@@ -4,6 +4,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { ProfileView } from '../profile-view/profileview';
+import { AppNavbar } from '../navigation-bar/navigationbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Row from "react-bootstrap/Row";
@@ -29,7 +30,7 @@ export const MainView = () => {
     .then((response) => response.json())
     .then((data) => {
       setMovies(data);
-      
+
     });
   }, [token]);
 
@@ -46,8 +47,15 @@ export const MainView = () => {
     localStorage.setItem("user", JSON.stringify(updatedUser));
   };
 
+  const onLogout = () => {
+    setUser(null);
+    setToken(null);
+    localStorage.clear();
+  };
+
   return (
     <BrowserRouter>
+    <AppNavbar user={user} onLogout={onLogout} />
       <Row className="justify-content-md-center">
         <Routes>
           <Route
