@@ -10,7 +10,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(() => {
-    fetch(`https://myflixachv-8f7ac3ab3517.herokuapp.com/users/${user.Username}/movies`, {
+    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}/movies`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
@@ -29,7 +29,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
       Birthday: birthday,
     };
 
-    fetch(`https://myflixachv-8f7ac3ab3517.herokuapp.com/users/${user.Username}`, {
+    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}`, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
@@ -55,7 +55,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
   };
 
   const handleRemoveFavorite = (movieId) => {
-    fetch(`https://myflixachv-8f7ac3ab3517.herokuapp.com/users/${user.Username}/movies/${movieId}`, {
+    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}/movies/${movieId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
