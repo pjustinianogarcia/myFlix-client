@@ -74,6 +74,33 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
       });
   };
 
+
+
+  const handleDeregister = () => {
+    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Account deleted successfully");
+          localStorage.clear();
+          onUserUpdate(null); // You might want to redirect to the login or home page here
+        } else {
+          throw new Error("Failed to delete account");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting account:", error);
+        alert("An error occurred. Please try again.");
+      });
+  };
+
+  <Button variant="danger" onClick={handleDeregister}>
+  Delete Account
+</Button>
+
+
   return (
     <Row>
       <Col md={6}>
