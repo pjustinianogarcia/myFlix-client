@@ -16,7 +16,7 @@ export const LoginView = ({ onLoggedIn }) => {
     }).toString();
     console.log("query", query);
 
-    const url = `https://myflixachv-8f7ac3ab3517.herokuapp.com/login?${query}`;
+    const url = `https://movie-api-3jxi.onrender.com/login?${query}`;
 
     fetch(url, {
       method: "POST",
