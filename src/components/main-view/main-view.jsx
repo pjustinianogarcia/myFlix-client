@@ -121,7 +121,7 @@ export const MainView = () => {
                         <MovieCard movie={movie} />
                       </Col>
                     ))}
-                    <Button variant="primary"  onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</Button>
+                
                   </>
                 )
               ) : (
