@@ -42,6 +42,8 @@ export const MainView = () => {
     localStorage.setItem("token", token);
   };
 
+  
+
   const onUserUpdate = (updatedUser) => {
     setUser(updatedUser);
     localStorage.setItem("user", JSON.stringify(updatedUser));

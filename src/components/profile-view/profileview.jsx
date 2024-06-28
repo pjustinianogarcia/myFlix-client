@@ -96,6 +96,22 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
       });
   };
 
+
+  useEffect(() => {
+    fetch(`https://movie-api-3jxi.onrender.com/movies`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const favoriteMovies = data.filter((movie) => user.FavoriteMovies.includes(movie._id));
+        setFavoriteMovies(favoriteMovies);
+      });
+  }, [token, user.Username, user.FavoriteMovies]);
+  
+
+
+
+
   <Button variant="danger" onClick={handleDeregister}>
   Delete Account
 </Button>
@@ -162,8 +178,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
                 <MovieCard movie={movie} />
                 <Button
                   variant="danger"
-                  onClick={() => handleRemoveFavorite(movie._id)}
-                >
+                  onClick={() => handleRemoveFavorite(movie._id)}>
                   Remove from Favorites
                 </Button>
               </Card.Body>
