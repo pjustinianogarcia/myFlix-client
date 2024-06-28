@@ -15,7 +15,13 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setFavoriteMovies(data);
+        console.log("Favorite Movies Data:", data); // Debugging log
+        setFavoriteMovies(data.map((movie) => ({
+          ...movie,
+          _id: movie._id.$oid,  // Extracting the ID
+          Genre: movie.Genre.$oid,
+          Director: movie.Director.$oid
+        })));
       });
   }, [token, user.Username]);
 
@@ -100,7 +106,15 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        const favoriteMovies = data.filter((movie) => user.FavoriteMovies.includes(movie._id));
+        const favoriteMovies = data
+          .filter((movie) => user.FavoriteMovies.includes(movie._id.$oid))
+          .map((movie) => ({
+            ...movie,
+            _id: movie._id.$oid,  // Extracting the ID
+            Genre: movie.Genre.$oid,
+            Director: movie.Director.$oid
+          }));
+        console.log("Filtered Favorite Movies:", favoriteMovies); // Debugging log
         setFavoriteMovies(favoriteMovies);
       });
   }, [token, user.Username, user.FavoriteMovies]);
