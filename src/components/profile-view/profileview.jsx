@@ -10,20 +10,21 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(() => {
-    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}/movies`, {
+    fetch(`https://movie-api-3jxi.onrender.com/movies`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Favorite Movies Data:", data); // Debugging log
-        setFavoriteMovies(data.map((movie) => ({
-          ...movie,
-          _id: movie._id.$oid,  // Extracting the ID
-          Genre: movie.Genre.$oid,
-          Director: movie.Director.$oid
-        })));
+        const favoriteMovies = data.filter((movie) =>
+          user.FavoriteMovies.includes(movie._id)
+        );
+        setFavoriteMovies(favoriteMovies);
+      })
+      .catch((error) => {
+        console.error("Error fetching movies:", error);
+        alert("An error occurred while fetching movies. Please try again.");
       });
-  }, [token, user.Username]);
+  }, [token, user.FavoriteMovies]);
 
   const handleUpdate = (event) => {
     event.preventDefault();
@@ -89,7 +90,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
         if (response.ok) {
           alert("Account deleted successfully");
           localStorage.clear();
-          onUserUpdate(null); // You might want to redirect to the login or home page here
+          onUserUpdate(null); // Redirect to login or home page here
         } else {
           throw new Error("Failed to delete account");
         }
@@ -99,25 +100,6 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
         alert("An error occurred. Please try again.");
       });
   };
-
-  useEffect(() => {
-    fetch(`https://movie-api-3jxi.onrender.com/movies`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const favoriteMovies = data
-          .filter((movie) => user.FavoriteMovies.includes(movie._id.$oid))
-          .map((movie) => ({
-            ...movie,
-            _id: movie._id.$oid,  // Extracting the ID
-            Genre: movie.Genre.$oid,
-            Director: movie.Director.$oid
-          }));
-        console.log("Filtered Favorite Movies:", favoriteMovies); // Debugging log
-        setFavoriteMovies(favoriteMovies);
-      });
-  }, [token, user.Username, user.FavoriteMovies]);
 
   return (
     <Row>
@@ -177,12 +159,14 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
           favoriteMovies.map((movie) => (
             <Card key={movie._id} className="mb-3">
               <Card.Body>
-                <MovieCard movie={movie} />
-                <Button
-                  variant="danger"
-                  onClick={() => handleRemoveFavorite(movie._id)}>
-                  Remove from Favorites
-                </Button>
+                <MovieCard movie={movie}>
+                  <Button
+                    variant="danger"
+                    onClick={() => handleRemoveFavorite(movie._id)}
+                  >
+                    Remove from Favorites
+                  </Button>
+                </MovieCard>
               </Card.Body>
             </Card>
           ))
