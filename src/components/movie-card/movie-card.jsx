@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie}) => {
+export const MovieCard = ({ movie, children}) => {
     return (
       <Card className="h-100">
         <Card.Img variant="top" src={movie.ImagePath} />
@@ -14,6 +14,7 @@ export const MovieCard = ({ movie}) => {
           <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
           <Button variant="secondary">More</Button>
         </Link>
+        {children} {/* Render children if any */}
       </Card.Body>
       </Card>
     );
@@ -38,5 +39,6 @@ export const MovieCard = ({ movie}) => {
       ]).isRequired,
       ImagePath: PropTypes.string,
       Feature: PropTypes.bool
-    }).isRequired
+    }).isRequired,
+    children: PropTypes.node 
   };
