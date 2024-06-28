@@ -18,6 +18,7 @@ export const ProfileView = ({ user, token, onUserUpdate }) => {
         const favoriteMovies = data.filter((movie) =>
           user.FavoriteMovies.includes(movie._id)
         );
+        console.log("Favorite Movies:", favoriteMovies);
         setFavoriteMovies(favoriteMovies);
       })
       .catch((error) => {
