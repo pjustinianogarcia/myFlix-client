@@ -45,6 +45,7 @@ export const MainView = () => {
   const onUserUpdate = (updatedUser) => {
     setUser(updatedUser);
     localStorage.setItem("user", JSON.stringify(updatedUser));
+    console.log("Updated user:", updatedUser);
   };
 
   const onLogout = () => {
@@ -52,6 +53,12 @@ export const MainView = () => {
     setToken(null);
     localStorage.clear();
   };
+
+  
+
+  useEffect(() => {
+    console.log("User on load:", user); // Add this line
+  }, [user]);
 
   return (
     <BrowserRouter>
