@@ -54,7 +54,23 @@ export const MainView = () => {
     localStorage.clear();
   };
 
-  
+  const addFavorite = (movieId) => {
+    fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}/movies/${movieId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((response) => response.json())
+    .then((updatedUser) => {
+      setUser(updatedUser);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+    })
+    .catch((error) => {
+      console.error("Error adding favorite movie:", error);
+    });
+  };
 
   useEffect(() => {
     console.log("User on load:", user); // Add this line
@@ -123,7 +139,7 @@ export const MainView = () => {
                   <>
                     {movies.map((movie) => (
                       <Col className="mb-5" key={movie._id} md={3}>
-                        <MovieCard movie={movie} />
+                        <MovieCard movie={movie} addFavorite={addFavorite} />
                       </Col>
                     ))}
                     
