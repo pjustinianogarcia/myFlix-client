@@ -72,6 +72,27 @@ export const MainView = () => {
     });
   };
 
+  const removeFavorite = async (movieId) => {
+    try {
+      // Make the API call to remove the favorite movie
+      await fetch(`https://movie-api-3jxi.onrender.com/users/${user.Username}/movies/${movieId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }
+      });
+
+      // Update the user state to reflect the removed favorite movie
+      setUser((prevUser) => ({
+        ...prevUser,
+        FavoriteMovies: prevUser.FavoriteMovies.filter((id) => id !== movieId)
+      }));
+    } catch (error) {
+      console.error('Error removing favorite movie:', error);
+    }
+  };
+
   useEffect(() => {
     console.log("User on load:", user); // Add this line
   }, [user]);
@@ -110,7 +131,7 @@ export const MainView = () => {
             element={
               user ? (
                 <Col md={8}>
-                  <ProfileView user={user} token={token} onUserUpdate={onUserUpdate} />
+                  <ProfileView user={user} token={token} onUserUpdate={onUserUpdate} removeFavorite={removeFavorite} />
                 </Col>
               ) : (
                 <Navigate to="/login" replace />
@@ -139,7 +160,7 @@ export const MainView = () => {
                   <>
                     {movies.map((movie) => (
                       <Col className="mb-5" key={movie._id} md={3}>
-                        <MovieCard movie={movie} addFavorite={addFavorite} />
+                        <MovieCard movie={movie} addFavorite={addFavorite} isFavorite={user.FavoriteMovies.includes(movie._id)} removeFavorite={removeFavorite}/>
                       </Col>
                     ))}
                     
@@ -155,3 +176,5 @@ export const MainView = () => {
     </BrowserRouter>
   );
 };
+
+

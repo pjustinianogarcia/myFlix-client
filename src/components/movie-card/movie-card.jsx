@@ -4,7 +4,16 @@ import PropTypes from 'prop-types';
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie, addFavorite, isFavorite, children}) => {
+export const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite, }) => {
+
+  const handleFavorite = () => {
+    if (isFavorite) {
+      removeFavorite(movie._id);
+    } else {
+      addFavorite(movie._id);
+    }
+  };
+
     return (
       <Card className="h-100">
         <Card.Img variant="top" src={movie.ImagePath} />
@@ -14,12 +23,10 @@ export const MovieCard = ({ movie, addFavorite, isFavorite, children}) => {
           <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
           <Button variant="secondary">More</Button>
         </Link>
-        {children} {/* Render children if any */}
-        {!isFavorite && (
-          <Button variant="primary" onClick={() => addFavorite(movie._id)}>
-            Add to Favorites
-          </Button>
-        )}
+        
+      <Button variant={isFavorite ? "danger" : "primary"} onClick={handleFavorite}>
+          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+        </Button>
       </Card.Body>
       </Card>
     );
@@ -47,5 +54,6 @@ export const MovieCard = ({ movie, addFavorite, isFavorite, children}) => {
     }).isRequired,
     addFavorite: PropTypes.func.isRequired,
   isFavorite: PropTypes.bool.isRequired,
-    children: PropTypes.node 
+  removeFavorite: PropTypes.func.isRequired,
+    
   };

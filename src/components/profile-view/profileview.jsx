@@ -118,29 +118,23 @@ export const ProfileView = ({ user, token, onUserUpdate, removeFavorite }) => {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Update
-        </Button>
-        <Button variant="danger" onClick={handleDeregister}>
-          Deregister
+          Update Profile
         </Button>
       </Form>
+      <Button variant="danger" onClick={handleDeregister}>
+        Delete Profile
+      </Button>
 
       <h3>Favorite Movies</h3>
-      {favoriteMovies.length > 0 ? (
-        <Row>
-          {favoriteMovies.map((movie) => (
-            <Col key={movie._id} md={3}>
-              <MovieCard movie={movie} isFavorite={true}>
-                <Button variant="danger" onClick={() => handleRemoveFavorite(movie._id)}>
-                  Remove from Favorites
-                </Button>
-              </MovieCard>
-            </Col>
-          ))}
-        </Row>
-      ) : (
-        <p>No favorite movies found.</p>
-      )}
+      <Row>
+        {favoriteMovies.map((movie) => (
+          <Col md={3} key={movie._id} className="mb-3">
+            <Card>
+              <MovieCard movie={movie} isFavorite={true} removeFavorite={handleRemoveFavorite} />
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 };
