@@ -27552,6 +27552,7 @@ const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite })=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                className: "d-flex flex-column",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
                         children: movie.Title
@@ -27561,6 +27562,7 @@ const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite })=>{
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
+                        className: "flex-grow-1",
                         children: movie.Description
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -27571,24 +27573,26 @@ const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite })=>{
                         to: `/movies/${encodeURIComponent(movie._id)}`,
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                             variant: "secondary",
+                            className: "mt-3",
                             children: "More"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 24,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 23,
+                        lineNumber: 24,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: isFavorite ? "danger" : "primary",
+                        className: "mt-3",
                         onClick: handleFavorite,
                         children: isFavorite ? "Remove from Favorites" : "Add to Favorites"
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 27,
+                        lineNumber: 28,
                         columnNumber: 7
                     }, undefined)
                 ]
@@ -41900,6 +41904,7 @@ const LoginView = ({ onLoggedIn })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
                 type: "submit",
+                className: "mt-3",
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
@@ -42081,10 +42086,11 @@ const SignupView = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
                 type: "submit",
+                className: "mt-3",
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/signup-view/signup-view.jsx",
-                lineNumber: 85,
+                lineNumber: 83,
                 columnNumber: 7
             }, undefined)
         ]
@@ -42301,6 +42307,7 @@ const ProfileView = ({ user, token, onUserUpdate, removeFavorite })=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "primary",
                         type: "submit",
+                        className: "mt-3",
                         children: "Update Profile"
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profileview.jsx",
@@ -42316,6 +42323,7 @@ const ProfileView = ({ user, token, onUserUpdate, removeFavorite })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                 variant: "danger",
                 onClick: handleDeregister,
+                className: "mt-3",
                 children: "Delete Profile"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profileview.jsx",
@@ -42323,6 +42331,7 @@ const ProfileView = ({ user, token, onUserUpdate, removeFavorite })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "mt-4",
                 children: "Favorite Movies"
             }, void 0, false, {
                 fileName: "src/components/profile-view/profileview.jsx",
@@ -42334,6 +42343,7 @@ const ProfileView = ({ user, token, onUserUpdate, removeFavorite })=>{
                         md: 3,
                         className: "mb-3",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
+                            className: "h-100 movie-card",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                 movie: movie,
                                 isFavorite: true,

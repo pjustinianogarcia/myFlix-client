@@ -117,19 +117,19 @@ export const ProfileView = ({ user, token, onUserUpdate, removeFavorite }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" className="mt-3">
           Update Profile
         </Button>
       </Form>
-      <Button variant="danger" onClick={handleDeregister}>
+      <Button variant="danger" onClick={handleDeregister} className="mt-3">
         Delete Profile
       </Button>
 
-      <h3>Favorite Movies</h3>
+      <h3 className="mt-4">Favorite Movies</h3>
       <Row>
         {favoriteMovies.map((movie) => (
           <Col md={3} key={movie._id} className="mb-3">
-            <Card>
+            <Card className="h-100 movie-card">
               <MovieCard movie={movie} isFavorite={true} removeFavorite={handleRemoveFavorite} />
             </Card>
           </Col>

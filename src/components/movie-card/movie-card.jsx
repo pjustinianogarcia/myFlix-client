@@ -17,15 +17,16 @@ export const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite, }) =
     return (
       <Card className="h-100">
         <Card.Img variant="top" src={movie.ImagePath} />
-        <Card.Body>
+        <Card.Body className="d-flex flex-column">
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
+          <Card.Text className="flex-grow-1">{movie.Description}</Card.Text>
+          
           <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-          <Button variant="secondary">More</Button>
+          <Button variant="secondary" className="mt-3">More</Button>
         </Link>
         
-      <Button variant={isFavorite ? "danger" : "primary"} onClick={handleFavorite}>
-          {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+      <Button variant={isFavorite ? "danger" : "primary"} className="mt-3" onClick={handleFavorite}>
+          {isFavorite ? "Remove from Favorites" : "Add to Favorites"} 
         </Button>
       </Card.Body>
       </Card>
