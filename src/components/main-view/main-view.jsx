@@ -9,12 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
-import Button from "react-bootstrap/Button";
+import Form from 'react-bootstrap/Form';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
-  //const [selectedMovie, setSelectedMovie] = useState(null);
+  const [filter, setFilter] = useState('');
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser? storedUser : null);
@@ -97,6 +97,11 @@ export const MainView = () => {
     console.log("User on load:", user); // Add this line
   }, [user]);
 
+  const filteredMovies = movies.filter((movie) =>
+    movie.Title.toLowerCase().includes(filter.toLowerCase())
+  );
+
+
   return (
     <BrowserRouter>
     <AppNavbar user={user} onLogout={onLogout} />
@@ -154,27 +159,38 @@ export const MainView = () => {
             path="/"
             element={
               user ? (
-                movies.length === 0 ? (
+                <>
+                 <Row className="m-3 d-flex justify-content-center" >
+                <Col md={8}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Search movies..."
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                    className="mb-4"
+                  />
+                </Col>
+                </Row>
+                <Row>
+                {filteredMovies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  <>
-                    {movies.map((movie) => (
-                      <Col className="mb-5" key={movie._id} md={3}>
-                        <MovieCard movie={movie} addFavorite={addFavorite} isFavorite={user.FavoriteMovies.includes(movie._id)} removeFavorite={removeFavorite}/>
-                      </Col>
-                    ))}
-                    
-                  </>
-                )
-              ) : (
-                <Navigate to="/login" replace />
-              )
-            }
-          />
-        </Routes>
-      </Row>
-    </BrowserRouter>
-  );
+                  filteredMovies.map((movie) => (
+                    <Col className="mb-5" key={movie._id} md={3}>
+                      <MovieCard movie={movie} addFavorite={addFavorite} isFavorite={user.FavoriteMovies.includes(movie._id)} removeFavorite={removeFavorite} />
+                    </Col>
+                  ))
+                )}
+                </Row>
+              </>
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+      </Routes>
+    </Row>
+  </BrowserRouter>
+);
 };
-
 
