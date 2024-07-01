@@ -70,6 +70,14 @@ myFlix-client/
 │   │   │   └── MovieCard.jsx
 │   │   ├── MovieView/
 │   │   │   └── MovieView.jsx
+│   │   │── LoginView/
+│   │   │   └──LoginView.jsx
+│   │   ├──SignupView
+│   │   │   └── SignupView.jsx
+│   │   ├── ProfileView
+│   │   │   └──ProfileView.jsx
+│   │   ├──NavigationBar
+│   │   │   └──NavigationBar.jsx
 │   ├── index.js
 │   ├── App.js
 ├── package.json
@@ -95,6 +103,22 @@ The `MovieCard` component displays the title and poster of a movie. When clicked
 The `MovieView` component displays detailed information about a selected movie, including its title, director, and poster image. It also includes a back button to return to the main view.
 
 **File:** `src/components/MovieView/MovieView.jsx`
+
+### LoginView
+
+Log In: Allows users to log in with a username and password.
+
+### SignupView
+
+Sign Up: Allows new users to register with a username, password, email, and date of birth.
+
+### ProfileView
+
+User Details: Displays user registration details.
+Update Info: Allows users to update their information (username, password, email, date of birth).
+Favorite Movies: Displays the user's favorite movies.
+Remove Favorite: Allows users to remove a movie from their list of favorite movies.
+Deregister: Allows existing users to deregister from the application.
 
 ## Features
 
