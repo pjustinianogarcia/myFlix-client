@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const MovieView = ({ movies }) => {
     const { movieId } = useParams();
@@ -11,7 +12,7 @@ export const MovieView = ({ movies }) => {
     return (
       <div>
       <div>
-        <img src={movie.ImagePath}  className="img-fluid mx-auto d-block"/>
+        <img className="img-fluid w-60" src={movie.ImagePath}/>
       </div>
       <div>
         <span>Title: </span>
