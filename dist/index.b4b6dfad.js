@@ -27554,7 +27554,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","../profile-view/profileview":"6UiUm","bootstrap/dist/css/bootstrap.min.css":"i5LP7","../navigation-bar/navigationbar":"b4bvX","react-bootstrap/Form":"iBZ80"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","../profile-view/profileview":"6UiUm","../navigation-bar/navigationbar":"b4bvX","bootstrap/dist/css/bootstrap.min.css":"i5LP7","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Form":"iBZ80","react-router-dom":"9xmpe"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27579,7 +27579,8 @@ const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                 variant: "top",
-                src: movie.ImagePath
+                src: movie.ImagePath,
+                className: "img-fluid mx-auto d-block"
             }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 19,
@@ -41689,7 +41690,8 @@ const MovieView = ({ movies })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.ImagePath
+                    src: movie.ImagePath,
+                    className: "img-fluid mx-auto d-block"
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 14,
@@ -41962,7 +41964,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80"}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p"}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42144,7 +42146,7 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80"}],"6UiUm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p"}],"6UiUm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5e1c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42415,7 +42417,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p","react-bootstrap":"3AD9A"}],"i5LP7":[function() {},{}],"b4bvX":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p"}],"b4bvX":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7264 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42539,6 +42541,6 @@ $RefreshReg$(_c, "AppNavbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p"}],"lJZlQ":[function() {},{}]},["iJWkb","fL6Hx","d8Dch"], "d8Dch", "parcelRequire6ba1")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"ac9Bn","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"atD8p"}],"i5LP7":[function() {},{}],"lJZlQ":[function() {},{}]},["iJWkb","fL6Hx","d8Dch"], "d8Dch", "parcelRequire6ba1")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

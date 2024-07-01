@@ -16,7 +16,7 @@ export const MovieCard = ({ movie, addFavorite, isFavorite, removeFavorite, }) =
 
     return (
       <Card className="h-100">
-        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Img variant="top" src={movie.ImagePath}  className="img-fluid mx-auto d-block"/>
         <Card.Body className="d-flex flex-column">
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text className="flex-grow-1">{movie.Description}</Card.Text>

@@ -11,7 +11,7 @@ export const MovieView = ({ movies }) => {
     return (
       <div>
       <div>
-        <img src={movie.ImagePath} />
+        <img src={movie.ImagePath}  className="img-fluid mx-auto d-block"/>
       </div>
       <div>
         <span>Title: </span>
