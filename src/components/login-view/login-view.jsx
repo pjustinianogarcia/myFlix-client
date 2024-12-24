@@ -10,11 +10,7 @@ export const LoginView = ({ onLoggedIn }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const query = new URLSearchParams({
-      Username: username,
-      Password: password
-    }).toString();
-    console.log("query", query);
+    
 
     const url = `https://movie-api-3jxi.onrender.com/login?`;
 
