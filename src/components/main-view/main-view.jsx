@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
@@ -103,7 +103,7 @@ export const MainView = () => {
 
 
   return (
-    <BrowserRouter>
+    <div>
     <AppNavbar user={user} onLogout={onLogout} />
       <Row className="justify-content-md-center">
         <Routes>
@@ -190,7 +190,7 @@ export const MainView = () => {
         />
       </Routes>
     </Row>
-  </BrowserRouter>
+  </div>
 );
 };
 
