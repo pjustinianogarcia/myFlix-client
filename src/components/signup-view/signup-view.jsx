@@ -29,7 +29,7 @@ export const SignupView = () => {
     })
       .then((response) => {
         if (response.ok) {
-          alert("Signup successful! Redirecting to the login page...");
+          alert("Signup successful! Redirecting to the login page.");
           navigate("/login"); // Redirects to login page
         } else {
           return response.json().then((error) => {
